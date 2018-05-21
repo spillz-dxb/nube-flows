@@ -22,4 +22,20 @@ You need to install moment.js and enable in the settings.js file
 
 
 
+### [Convert a timezone in node-red ](https://github.com/NubeDev/nube-flows/blob/master/timeScheduleFlow.md)
+
+```
+var nDate = new Date().toLocaleString('en-UK', {
+    timeZone: 'Australia/Sydney'
+});
+
+timeAu = (nDate);
+
+node.status({fill:"blue",shape:"dot",text:"Message recieved:  @" +" "+ timeAu});
+return msg;
+
+```
+
+
+
 
