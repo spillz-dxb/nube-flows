@@ -40,76 +40,59 @@ https://flows.nodered.org/
 AND, OR, NOT
 
 Logical Operators
-5.1.1 Logical operators are used to determine the logic between variables or values.
-5.1.2 Given that x = 6 and y = 3, the table below explains the logical operators:
-Operator
-Description
-Example
-&&
-and
-(x < 10 && y > 1) is true
-||
-or
-(x == 5 || y == 5) is false
-!
-not
-!(x == y) is true
 
+#### Logical operators are used to determine the logic between variables or values.
+
+Given that x = 6 and y = 3, the table below explains the logical operators:
+
+##### AND
+```
+(x < 10 && y > 1) is true
+```
+##### OR
+```
+||
+```
+```
+(x == 5 || y == 5) is false
+```
+##### NOT
+```
+!
+```
+```
+!(x == y) is true
+```
 
 ### Comperserson 
 
 https://www.w3schools.com/js/js_comparisons.asp
 
-Operator
-Description
-Comparing
-Returns
-==
-equal to
-x == 8
-false
-x == 5
-true
-x == "5"
-true
-===
-equal value and equal type
-x === 5
-true
-x === "5"
-false
-!=
-not equal
-x != 8
-true
-!==
-not equal value or not equal type
-x !== 5
-false
-x !== "5"
-true
-x !== 8
-true
->
-greater than
-x > 8
-false
-<
-less than
-x < 8
-true
->=
-greater than or equal to
-x >= 8
-false
-<=
-less than or equal to
-x <= 8
-true
 
+#### equal to
+
+x == 8
+
+
+#### greater than
+x > 8
+
+
+#### less than
+x < 8
+
+
+#### greater than or equal to
+
+x >= 8
+
+#### less than or equal to
+
+x <= 8
 
 ## Functions
 
+```
 
 function myFunction(p1, p2) {
     return p1 * p2;
@@ -118,10 +101,12 @@ msg.payload = myFunction(4, 4);
 
 return msg;
 
+```
 
 
 
 #### Time functions
+```
 
 // this is a on delay
 
@@ -147,7 +132,7 @@ if (msg.payload === false){
     node.send(msg);
 }
 
-
+```
 
 
 ### Arithmetic Operators
@@ -186,21 +171,25 @@ return msg;
 
 #### Math.round()
 
+```
+
 Math.round(x) returns the value of x rounded to its nearest integer:
 Math.round(4.7);    // returns 5
 Math.round(4.4);    // returns 4
 
+```
+
 ## Conversions
 
 ### Converting Strings to Numbers 
-
+```
 Method
 Description
 parseFloat()
 Parses a string and returns a floating point number
 parseInt()
 Parses a string and returns an integer
-
+```
 
 
 ## Node Red Functions
@@ -347,8 +336,8 @@ return [msg1,msg2,msg3];
 
 
 
-
-4 BMS applications Examples
+
+## BMS applications Examples
 
 4.1 Staging of Compressors
 Inputs: Setpoint, Zone Temp, Htg Offset, Clg Offset, Number of Stages, Interstage Delay.
@@ -356,25 +345,27 @@ Clg Mode: When Zone Temp > (Setpoint + Clg Offset) start Clg Mode, start Clg Sta
 Htg Mode: When Zone Temp < (Setpoint - Htg Offset) start Htg Mode, start Htg Stage 1.  If Zone Temp < (Setpoint - Htg Offset) for Interstage Delay then start next stage.  If Htg Mode and Zone Temp > (Zone Temp - ((Htg Offset / Num of Stages) * (Current Stage - 1))) then stop Current Stage.  If Zone Temp > (Zone Temp + Clg Offset) stop Htg Mode, start Clg Mode. 
 
 
-4.2 PID Loop
+### PID Loop
 
-4.2.1 Porp Band
-4.2.2 Direct acting
+#### Porp Band
+#### Direct acting
 When porb only is used with direct acting the output will modulate between 0% and 100% between SP and the SP+the PB
 
 
-4.2.3 Reversing acting
+#### Reversing acting
 When porb only is used with revers acting the output will modulate between 0% and 100% between SP and the SP-the PB
 
-4.2.4 PI control
+#### PI control
 When PI control is used the output will be the the combination of the porp +int reset value. The reset value will change based up/down on the reset time and how far +/- from setpoint
+
 PI control with DB
 If the DB is used no integral action will occur when the measure value is in the db range +/- and the pi loop will hold the current value
-4.2.5 Loop disable
+
+#### Loop disable
 If the loop is disabled
 The int action will be reset and to output will be 0
 
-4.3 On/Off Delay 
+### On/Off Delay 
 
 ```
 
@@ -454,9 +445,9 @@ if(msg.payload === true) {
 
 ```
 
-4.4 Energy and Water
+## Energy and Water
 
-4.4.1 Pulse water meter
+### Pulse water meter
 
 ```
 
@@ -464,10 +455,10 @@ if(msg.payload === true) {
 
 ```
 
-5 Use Node red create a web API
-5.1 Example use
+## Use Node red create a web API
+### Example use
 
-5.2 The flow
+#### The flow
 
 ```
 
@@ -475,7 +466,7 @@ if(msg.payload === true) {
 
 ```
 
-6 Email
+# Email
 
 ```
 
@@ -483,7 +474,7 @@ if(msg.payload === true) {
 
 ```
 
-7 Jsonata
+# Jsonata
 
 Test data
 
