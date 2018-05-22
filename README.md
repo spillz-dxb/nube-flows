@@ -36,6 +36,27 @@ return msg;
 
 ```
 
+```
+const event = new Date();
+
+const options = {
+  year: 'numeric',
+  day: 'numeric',
+  month: 'long',
+  weekday: 'short',
+  hour: 'numeric',
+  minute: 'numeric',
+  timeZoneName: 'short',
+  timeZone: 'Australia/Sydney',
+};
+
+msg.payload = (event.toLocaleString('en-AU', options));
+
+
+return msg;
+
+```
+
 
 
 
