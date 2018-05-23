@@ -59,4 +59,20 @@ return msg;
 
 
 
+## Arrow functions (Lambda) in nodejs
+
+```
+
+someValues = [1, 2, 3, 4];
+
+someValues.forEach((element) => {
+    node.warn(element);
+});
+
+node.warn(someValues.map(x => 8 * x));
+
+```
+
+
+
 
