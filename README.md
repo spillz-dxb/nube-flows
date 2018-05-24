@@ -73,6 +73,22 @@ node.warn(someValues.map(x => 8 * x));
 
 ```
 
+## Counter
 
+```
+
+if (context.hasOwnProperty("counter"))
+	context.counter += 1;
+else
+	context.counter = 0;
+
+context.flow.counter = context.counter + 1;
+
+msg.payload = "local counter = " + parseInt(context.counter, 10);
+node.status({fill:"green",shape:"dot",text:msg.payload});
+
+return msg;
+
+```
 
 
